@@ -1,7 +1,6 @@
 import * as React from "react";
 import "./hero.css";
 import { Typography } from "@mui/joy";
-import Appbar from "../Appbar/appbar";
 import { Button, Link } from "@mui/joy";
 
 export default function Hero() {

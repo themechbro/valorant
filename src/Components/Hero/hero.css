@@ -1,4 +1,5 @@
 .top-content {
+  position: relative;
   display: flex;
   flex-direction: column;
   -webkit-box-align: center;
@@ -8,18 +9,19 @@
   -webkit-box-flex: 1;
   flex-grow: 1;
   gap: 32px;
-  margin-top: -40%;
-  transform: translateY(-40%);
+  margin-top: -20%;
+  transform: translateY(-20%);
 }
 .hero {
   position: relative;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 99.2vw;
 }
 video {
+  position: relative;
   object-fit: cover;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: inherit;
 }
 
 @media (max-width: 768px) {
@@ -29,9 +31,15 @@ video {
     transform: translateY(-40%);
   }
   .hero {
-    height: 80vh;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
   video {
     height: 80vh;
+    width: 100vw;
   }
 }

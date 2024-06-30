@@ -1,0 +1,40 @@
+.latest {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  text-rendering: optimizeSpeed;
+  background-image: url("https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/ece1d7a8a15c7f55cb3a09a8aca0fd5d5d93c9ac-5120x1140.png?auto=format&fit=fill&q=80&w=2560");
+  background-size: cover;
+  background-attachment: fixed;
+}
+.card-deck {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.image-hover {
+  transition: all 0.5s ease-out;
+}
+.image-hover:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s ease-in;
+}
+
+.cards:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .card-deck {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cards {
+    margin-bottom: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+}

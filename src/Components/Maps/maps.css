@@ -1,0 +1,26 @@
+.maps {
+  background-image: url("https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/3828b05489971b4715f673bc0e2db81f6c7afac7-5120x1616.png?auto=format&fit=fill&q=80&h=640");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.maps_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .maps_container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .title-val {
+    font-size: 2rem !important;
+  }
+  .desc-val {
+    font-size: small !important;
+  }
+}
