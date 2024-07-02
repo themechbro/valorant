@@ -7,6 +7,11 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import "./footer.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const socials = [
   { icon: <TwitterIcon />, link: "https://twitter.com/VALORANTukn" },
@@ -29,6 +34,16 @@ const ratingimg = [
 ];
 
 export default function Footer() {
+  useGSAP(() => {
+    gsap.from(".icons, .logos, .copyright, .links, .ratings", {
+      scrollTrigger: ".footer",
+      y: -10,
+      opacity: 0,
+      duration: 1,
+      delay: 0.3,
+      stagger: 0.5,
+    });
+  });
   return (
     <footer className="footer p-5">
       <div className="container footer_container">

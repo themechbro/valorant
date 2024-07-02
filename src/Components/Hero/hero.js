@@ -2,8 +2,26 @@ import * as React from "react";
 import "./hero.css";
 import { Typography } from "@mui/joy";
 import { Button, Link } from "@mui/joy";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  useGSAP(() => {
+    gsap.fromTo(
+      ".top-content",
+      { opacity: 0, duration: 0.5, delay: 1 },
+      { opacity: 1, duration: 0.5, delay: 1, ease: "sine.in" }
+    );
+    gsap.fromTo(
+      "#video",
+      { opacity: 0, duration: 0.2, delay: 0.5 },
+      { opacity: 1, duration: 0.2, delay: 0.5, ease: "sine.in" }
+    );
+  });
+
   return (
     <div className="hero">
       <video
@@ -11,6 +29,7 @@ export default function Hero() {
         muted
         loop
         src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/409ab2fc369ba5e1fe50bac10c6676d7d1365a9f.mp4"
+        id="video"
       ></video>
       <div className="top-content ">
         <Typography level="title-lg" sx={{ color: "#FFF" }}>

@@ -3,11 +3,28 @@ import "./diff.css";
 import { Typography, Button } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Diff() {
+  useGSAP(() => {
+    gsap.from(".diff-card", {
+      scrollTrigger: {
+        trigger: ".you-diff",
+      },
+      opacity: 0,
+      duration: 0.5,
+      delay: 1,
+      ease: "sine.in",
+    });
+  });
+
   return (
     <section className="you-diff ">
-      <div className="container py-5 pt-5 d-flex flex-row align-items-center">
+      <div className="container diff-card py-5 pt-5 d-flex flex-row align-items-center">
         <Card
           variant="plain"
           sx={{

@@ -2,8 +2,25 @@ import * as React from "react";
 import { Typography } from "@mui/joy";
 import ValorantCard from "./card";
 import "./latest.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Latest() {
+  useGSAP(() => {
+    gsap.from(".card-deck-controller", {
+      scrollTrigger: {
+        trigger: ".latest",
+      },
+      opacity: 0,
+      x: -100,
+      duration: 0.7,
+      delay: 0.5,
+      ease: "sine.in",
+    });
+  });
   return (
     <section className="latest  ">
       <div className="container py-3">

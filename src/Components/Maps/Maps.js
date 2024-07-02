@@ -3,8 +3,49 @@ import "./maps.css";
 import { Typography, Button } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { PixiPlugin } from "gsap/PixiPlugin";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(PixiPlugin);
 
 export default function Maps() {
+  useGSAP(() => {
+    gsap.from(".responsive-images", {
+      scrollTrigger: {
+        trigger: ".maps_container",
+      },
+      pixi: {
+        blurX: 15,
+        blurY: 15,
+        duration: 0.5,
+      },
+      x: -100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 1,
+      ease: "sine.in",
+    });
+
+    gsap.from(".contents", {
+      scrollTrigger: {
+        trigger: ".maps_container",
+      },
+      pixi: {
+        blurX: 15,
+        blurY: 15,
+        duration: 0.5,
+      },
+      y: -100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 1,
+      ease: "sine.in",
+    });
+  });
+
   return (
     <section className="maps">
       <div className="maps_container container ">
@@ -15,6 +56,7 @@ export default function Maps() {
             width: 400,
             height: 500,
           }}
+          className="contents"
         >
           <CardContent
             sx={{
@@ -65,7 +107,7 @@ export default function Maps() {
         <div className="map-image  ">
           <img
             src="https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/65c45804e00ee97977b6eef06da370543968d161-1232x1232.png?auto=format&fit=fill&q=80&w=576"
-            className="responsive-image"
+            className="responsive-images"
           />
         </div>
       </div>

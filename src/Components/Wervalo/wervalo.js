@@ -3,8 +3,34 @@ import "./wervalo.css";
 import { Typography, Button } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function WerValo() {
+  useGSAP(() => {
+    gsap.from(".wervalo__container", {
+      opacity: 0,
+      x: -100,
+      y: 100,
+      duration: 1.5,
+      delay: 0.5,
+      ease: "power3.inOut",
+      scrollTrigger: {
+        trigger: "#wervalo",
+
+        toggleActions: "play none none none",
+      },
+    });
+    gsap.fromTo(
+      "#video2",
+      { outline: "1px solid grey" },
+      { outline: "1px solid rgb(119, 5, 5)" }
+    );
+  });
+
   return (
     <section className="wervalo">
       <div className="wervalo__container container ">
@@ -15,6 +41,7 @@ export default function WerValo() {
             width: 400,
             height: 500,
           }}
+          id="wervalo"
         >
           <CardContent
             sx={{
@@ -66,7 +93,7 @@ export default function WerValo() {
         </Card>
 
         <div className="video_container  ">
-          <video autoPlay muted loop playsInline>
+          <video autoPlay muted loop playsInline id="video2">
             <source
               src="https://cmsassets.rgpub.io/sanity/files/dsfx7636/news/f6ccf20dfe3f6a24ea9216bb8afaaa66740c715d.mp4"
               type="video/mp4"

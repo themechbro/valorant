@@ -3,8 +3,51 @@ import "./agent.css";
 import { Typography, Button } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { PixiPlugin } from "gsap/PixiPlugin";
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(PixiPlugin);
 
 export default function Agent() {
+  useGSAP(() => {
+    gsap.from(".content", {
+      scrollTrigger: {
+        trigger: ".agent-container",
+      },
+      pixi: {
+        blurX: 15,
+        blurY: 15,
+        duration: 0.5,
+        delay: 1,
+      },
+      x: 100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 1,
+      ease: "sine.in",
+    });
+
+    gsap.from(".responsive-image", {
+      scrollTrigger: {
+        trigger: ".agent-container",
+      },
+      pixi: {
+        blurX: 15,
+        blurY: 15,
+        duration: 0.5,
+        delay: 1,
+      },
+      y: 100,
+      opacity: 0,
+      duration: 0.3,
+      delay: 1,
+      ease: "sine.in",
+    });
+  });
+
   return (
     <section className="agents">
       <div className="agent-container container p-5">
@@ -30,6 +73,7 @@ export default function Agent() {
                 justifyContent: "space-evenly",
                 alignItems: "center",
               }}
+              id="card-content"
             >
               <Typography
                 level="h1"
