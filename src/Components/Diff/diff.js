@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./diff.css";
-import { Typography, Button } from "@mui/joy";
+import { Typography, Button, Link } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import gsap from "gsap";
@@ -64,6 +64,9 @@ export default function Diff() {
                   color: "rgb(15, 25, 35)",
                 },
               }}
+              component={Link}
+              href="https://www.youtube.com/watch?v=yjAbV8m0xrs"
+              underline="none"
             >
               WATCH NOW
             </Button>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./agent.css";
-import { Typography, Button } from "@mui/joy";
+import { Typography, Button, Link } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import gsap from "gsap";
@@ -113,6 +113,9 @@ export default function Agent() {
                     color: "rgb(236, 232, 225)",
                   },
                 }}
+                component={Link}
+                href="https://playvalorant.com/en-gb/agents/"
+                underline="none"
               >
                 VIEW ALL AGENTS
               </Button>

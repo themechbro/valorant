@@ -11,7 +11,6 @@ const navlist = [
   "OUR SOCIALS",
   "MORE",
 ];
-
 export default function Navlist() {
   return (
     <div className="">

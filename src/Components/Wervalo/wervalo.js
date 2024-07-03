@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./wervalo.css";
-import { Typography, Button } from "@mui/joy";
+import { Typography, Button, Link } from "@mui/joy";
 import Card from "@mui/joy/Card";
 import CardContent from "@mui/joy/CardContent";
 import gsap from "gsap";
@@ -86,6 +86,9 @@ export default function WerValo() {
                   color: "rgb(236, 232, 225)",
                 },
               }}
+              component={Link}
+              href="https://playvalorant.com/en-gb/news/announcements/beginners-guide/"
+              underline="none"
             >
               Learn Now
             </Button>
