@@ -6,5 +6,6 @@
   box-sizing: border-box;
 }
 .App {
-  position: absolute;
+  position: relative;
+  overflow-x: hidden;
 }
