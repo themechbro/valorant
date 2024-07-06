@@ -1,25 +1,31 @@
 import "./App.css";
-import Agent from "./Components/Agents/agents";
-import Appbar from "./Components/Appbar/appbar";
-import Diff from "./Components/Diff/diff";
 import Footer from "./Components/Footer/Footer";
-import Hero from "./Components/Hero/hero";
-import Latest from "./Components/Latest/latestsection";
-import Maps from "./Components/Maps/Maps";
-import WerValo from "./Components/Wervalo/wervalo";
+import Appbar from "./Components/Appbar/appbar";
+import Main from "./main";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AgentDeck from "./Components/AgentPage/agentsDeck";
+import { Provider } from "react-redux";
+import store from "./store";
+import ViewAgent from "./Components/AgentPage/viewAgent";
 
 function App() {
   return (
-    <div className="App">
-      <Appbar />
-      <Hero></Hero>
-      <Latest />
-      <Diff />
-      <WerValo />
-      <Agent />
-      <Maps />
-      <Footer />
-    </div>
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Appbar />
+          <Routes>
+            <Route path="/" element={<Main />}></Route>
+            <Route path="/agents" element={<AgentDeck />}></Route>
+            <Route
+              path="/agents/:uuid=true/:displayName"
+              element={<ViewAgent />}
+            ></Route>
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

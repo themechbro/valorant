@@ -1,0 +1,16 @@
+.agent-deck {
+  background-color: rgb(15, 25, 35);
+  height: auto;
+  width: 100vw;
+}
+.agent_deck_container {
+  background-image: url("https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/122e6caea8b2a2dbb6d6e71eea4e24effab342da-5120x574.png?auto=format&fit=fill&q=80&w=1905");
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}
+.deck {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

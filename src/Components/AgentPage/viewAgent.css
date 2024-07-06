@@ -1,0 +1,50 @@
+.abilities {
+  background-color: rgb(15, 25, 35);
+}
+
+@media (max-width: 768px) {
+  .view-agent.container-fluid {
+    padding: 0;
+    margin: 0;
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  .role {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .role img {
+    width: 30px; /* Smaller image size for mobile */
+  }
+  .agent-name {
+    font-size: 1rem;
+  }
+  .agent-desc {
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .role {
+    padding: 0.5rem;
+  }
+
+  .role img {
+    width: 20px; /* Even smaller image size for very small screens */
+  }
+  .agent-name {
+    font-size: 1rem;
+  }
+  .agent-desc {
+    font-size: 0.5rem;
+  }
+}

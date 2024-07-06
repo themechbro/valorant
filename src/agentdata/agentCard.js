@@ -505,3 +505,5 @@ const agentCardData = [
     },
   },
 ];
+
+export default agentCardData;

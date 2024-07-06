@@ -114,7 +114,7 @@ export default function Agent() {
                   },
                 }}
                 component={Link}
-                href="https://playvalorant.com/en-gb/agents/"
+                href="/agents"
                 underline="none"
               >
                 VIEW ALL AGENTS
